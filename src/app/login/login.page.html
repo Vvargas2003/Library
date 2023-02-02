@@ -1,0 +1,47 @@
+
+<ion-content padding class="background">
+  <form [formGroup]="loginForm"(ngSubmit)="loginUser(loginForm.value)">
+   <figure class="size-logo">
+    <img src="./assets/img/login.png">
+   </figure> 
+    <ion-item fill="solid">
+      <ion-icon name="mail"></ion-icon>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="solid">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName="password"></ion-input>
+    </ion-item>
+  
+
+<div>
+  <ng-container *ngFor="let validation of validation_message.email">
+    <div *ngIf="
+    loginForm.get('email')?.hasError(validation.type) && 
+    (loginForm.get('email')?.dirty || 
+    loginForm.get('email')?.touched)
+    ">
+      {{validation.message}}
+    </div>
+  </ng-container>
+</div>
+   
+    
+<ion-button
+[disabled]="!loginForm.valid"
+type="submit">
+  Login
+</ion-button>
+
+<ion-button (click)="irRegistro()"
+type="submit">
+  Registrarte
+</ion-button>
+
+</form>
+{{ errorMessage }}
+</ion-content>  
+<ion-footer>
+ 
