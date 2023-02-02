@@ -24,19 +24,30 @@
   </ion-item>
   
   <ion-item>
-    <ion-label position="floating">Tipo documento</ion-label>
-    <ion-input placeholder="Enter text" formControlName="document_type"></ion-input>
-  </ion-item>
+    <ion-select placeholder="Tipo de Documento" formControlName="document_type">
+        <ion-select-option value="CC">Cédula de ciudadanía</ion-select-option>
+        <ion-select-option value="CE">Cédula Extranjera</ion-select-option>
+        <ion-select-option value="TT">Tarjeta de Identidad</ion-select-option>
+        <ion-select-option value="PAP">Pasaporte</ion-select-option>
+        <ion-select-option value="OT">Otro</ion-select-option>
+    </ion-select>
+</ion-item>
   
   <ion-item>
     <ion-label position="floating">Numero documento</ion-label>
     <ion-input placeholder="Enter text" formControlName="document_number"> </ion-input>
   </ion-item>
   
-  <ion-item>
-    <ion-label position="floating">Carrera</ion-label>
-    <ion-input placeholder="Enter text" formControlName="career"></ion-input>
-  </ion-item>
+  <ion-list>
+    <ion-item>
+      <ion-select interface="popover" placeholder="Carrera" formControlName="career">
+        <ion-select-option value="IS">Ingenieria de Sistemas</ion-select-option>
+        <ion-select-option value="iG">Ingenieria Industrial</ion-select-option>
+        <ion-select-option value="M">Medicina</ion-select-option>
+        <ion-select-option value="P">Psicología</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
   
   <ion-item>
     <ion-label position="floating">Email</ion-label>
