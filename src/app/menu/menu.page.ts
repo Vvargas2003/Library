@@ -37,7 +37,7 @@ export class MenuPage implements OnInit {
   }
 
   goToMyFavorites(){
-    this.navCtrl.navigateRoot("/menu/favorite-books");
+    this.navCtrl.navigateRoot("/menu/favorite-sbooks");
     this.menu.close();
   }
 
