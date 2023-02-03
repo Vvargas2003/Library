@@ -46,8 +46,8 @@ export class HomePage {
   }
 
   goToAuthors(){
-   this.navCtrl.navigateForward("/menu/authors");
-   this.menu.close();
+    this.navCtrl.navigateForward("/menu/authors");
+    this.menu.close();
   }
 
   goToBooks(){
@@ -61,3 +61,6 @@ export class HomePage {
   }
 
 }
+
+
+
