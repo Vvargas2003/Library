@@ -12,8 +12,7 @@ export class LibraryService {
 
   constructor(
     
-    private http:HttpClient
-  ) { }
+    private http:HttpClient) { }
 
   getAuthors() {
     return fetch(`${this.urlServer}authors`).then(
@@ -35,9 +34,10 @@ export class LibraryService {
       allBooks => allBooks.json()
     );
   }
-  getMyFavoriteBooks(user_id: any){
+
+  getMyFavoriteBooks(user_id:any){
     return this.http.get(`${this.urlServer}my_favorite_books?user_id=${user_id}`)
-   
   }
+
 
 }

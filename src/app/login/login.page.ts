@@ -4,6 +4,7 @@ import { NavController } from '@ionic/angular';
 import { AuthenticateService } from '../services/authenticate.service';
 import { Storage } from '@ionic/storage';
 import { type } from 'os';
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -26,6 +27,7 @@ export class LoginPage implements OnInit {
     private auth: AuthenticateService, 
     private navCtrl: NavController,
     private storage: Storage,
+    private alertController:AlertController
     ) { 
 
     this.loginForm = this.formBuilder.group({
@@ -51,16 +53,33 @@ export class LoginPage implements OnInit {
 
   loginUser(credentials: any) {
     console.log(credentials);
-    this.auth.loginUser(credentials).then( res=> {
-      this.errorMessage = "";
+    this.auth.loginUser(credentials).then( (res: any) => {
       this.storage.set("isUserLoggedIn", true);
+      this.storage.set("user_id", res.user.id);
       this.navCtrl.navigateForward("/menu/home");
-    }).catch(err => {
-      this.errorMessage = err
-    });
-  }
-  
-  irRegistro(){
-    this.navCtrl.navigateForward("/Login")
+    }).catch(err=>{
+
+      this.presentAlert("Opps", "Hubo un error",err)
+
+    })
+ }   
+
+ async presentAlert(header: any, subHeader: any, message: any) {
+  const alert = await this.alertController.create(
+    {
+      header:header,
+      subHeader:subHeader,
+      message:message,
+      buttons:['Ok']
+
+    }
+
+  );
+  await alert.present();
+ 
+ }
+
+ irRegistro(){
+    this.navCtrl.navigateBack("register");
   }
 }

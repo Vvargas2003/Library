@@ -43,10 +43,7 @@ const routes: Routes = [
     path: 'books',
     loadChildren: () => import('./books/books.module').then( m => m.BooksPageModule)
   },
-  {
-    path: 'favorite-books',
-    loadChildren: () => import('./favorite-books/favorite-books.module').then( m => m.FavoriteBooksPageModule)
-  },
+
   {
     path: 'book-detail-modal',
     loadChildren: () => import('./book-detail-modal/book-detail-modal.module').then( m => m.BookDetailModalPageModule)
@@ -54,6 +51,10 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'authors-detail-modal',
+    loadChildren: () => import('./authors-detail-modal/authors-detail-modal.module').then( m => m.AuthorsDetailModalPageModule)
   },
   
  

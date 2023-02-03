@@ -1,3 +1,5 @@
+
+
 ion-avatar {
     height: 150px;
     width: 100%;
@@ -7,15 +9,18 @@ ion-avatar {
 ion-avatar img {
     width: 90px;
     height: 90px;
+   
 }
 ion-card {
     width: 100%;
     margin: 0;
     padding: 0;
     height: 100px;
+    
 }
 
 ion-card ion-card-header {
+    
     padding: 10px 10px;
 }
 
@@ -36,3 +41,5 @@ ion-card ion-card-content {
     font-size: .8em;
     text-transform: lowercase;
 }
+
+

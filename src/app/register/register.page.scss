@@ -1,5 +1,18 @@
+:root{
+    --color:var(--color)
+}
+
+
 .size-logo img{
-    max-width: 100px;
+    max-width: 200px;
     margin: 0 auto;
     display: block;
+}
+ion-content.background{
+    --background: url(../../assets/img/fondo2.jpeg) 0 0/100% 100% no-repeat;
+  }
+
+.color_titulo{
+    color:var(--color)
+    
 }

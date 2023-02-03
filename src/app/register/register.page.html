@@ -1,14 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons>
-      <ion-button (click)="goToLogin()">
-        Back
-      </ion-button>
-    </ion-buttons>
+    <ion-buttons></ion-buttons>
+    <ion-title class="color_titulo">Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding class="background">
 <figure class="size-logo">
   <img src="./assets/img/Logo.png" />
 </figure>
@@ -25,11 +22,10 @@
   
   <ion-item>
     <ion-select placeholder="Tipo de Documento" formControlName="document_type">
-        <ion-select-option value="CC">Cédula de ciudadanía</ion-select-option>
-        <ion-select-option value="CE">Cédula Extranjera</ion-select-option>
-        <ion-select-option value="TT">Tarjeta de Identidad</ion-select-option>
-        <ion-select-option value="PAP">Pasaporte</ion-select-option>
-        <ion-select-option value="OT">Otro</ion-select-option>
+        <ion-select-option value="cc">cc</ion-select-option>
+        <ion-select-option value="ce">ce</ion-select-option>
+        <ion-select-option value="ti">ti</ion-select-option>
+        <ion-select-option value="ps">ps</ion-select-option>
     </ion-select>
 </ion-item>
   
@@ -41,10 +37,10 @@
   <ion-list>
     <ion-item>
       <ion-select interface="popover" placeholder="Carrera" formControlName="career">
-        <ion-select-option value="IS">Ingenieria de Sistemas</ion-select-option>
-        <ion-select-option value="iG">Ingenieria Industrial</ion-select-option>
-        <ion-select-option value="M">Medicina</ion-select-option>
-        <ion-select-option value="P">Psicología</ion-select-option>
+        <ion-select-option value="sistemas"> sistemas</ion-select-option>
+        <ion-select-option value="industrial"> industrial</ion-select-option>
+        <ion-select-option value="contaduría">contaduría</ion-select-option>
+        <ion-select-option value="administración">administración</ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>
@@ -59,7 +55,7 @@
     <ion-input placeholder="Enter text" formControlName="password"></ion-input>
   </ion-item>
 
-  <ion-button 
+<ion-button 
 shape="round"
 color="warning"
 type="submit">
@@ -72,8 +68,5 @@ color="warning"
 type="submit">
   Volver 
 </ion-button>
-
 </form>
-
-
 </ion-content>
